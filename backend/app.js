@@ -9,7 +9,8 @@ import reviewRouter from "./routes/reviewRoute.js";
 import feedbackRouter from "./routes/feedbackRoute.js";
 import contentRouter from "./routes/ContentRoute.js";
 import chatRequestRouter from "./routes/chatRequest.js";
-
+import http from "http";
+import { Server } from "socket.io";
 dotenv.config({ path: "./config/.env" });
 
 const app = express();
@@ -159,4 +160,4 @@ app.use("/api/v1/feedback", feedbackRouter);
 app.use("/api/v1/content", contentRouter);
 app.use("/api/v1/request", chatRequestRouter);
 
-export default app;
+export {app,server};
